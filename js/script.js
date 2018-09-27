@@ -11,8 +11,13 @@ const studentsPerPage = 10;
 var pagesNumbersList;
 var studentList = document.getElementsByClassName('student-list')[0];
 var studentNumber = studentList.children.length;
-const buttonDiv = document.querySelector('.pagination');
-const buttonUl = buttonDiv.querySelector('ul');
+
+const page = document.querySelector(".page");
+const buttonDiv = document.createElement("div");
+buttonDiv.className = "pagination";
+const buttonUl = document.createElement("ul");
+buttonDiv.appendChild(buttonUl);
+page.appendChild(buttonDiv);
 
 //create a function that would determining the amount of pages needed per students
 function amountOfPages() {
